@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus Hagans — Tailwind Components</title>
+  <!-- Tailwind CDN (WHAT IT IS). 
+       Loads Tailwind styles (WHAT IT DOES). 
+       Lets us use utility classes (WHAT IT MEANS). -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Navbar (WHAT IT IS). 
+       Top navigation bar (WHAT IT DOES). 
+       Helps users find pages (WHAT IT MEANS). -->
+  <header class="bg-white border-b border-slate-200">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <!-- Logo (WHAT IT IS). 
+           Site name (WHAT IT DOES). 
+           Tells you what site this is (WHAT IT MEANS). -->
+      <div class="text-xl font-bold text-blue-800">MH Portfolio</div>
+
+      <!-- Desktop Links (WHAT IT IS). 
+           Links for big screens (WHAT IT DOES). 
+           Hidden on phones (WHAT IT MEANS). -->
+      <div class="hidden md:flex gap-6 font-medium">
+        <a href="#features" class="hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Features</a>
+        <a href="#about" class="hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">About</a>
+        <a href="#contact" class="hover:text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button (WHAT IT IS). 
+           Opens menu on phones (WHAT IT DOES). 
+           Uses Aria for screen readers (WHAT IT MEANS). -->
+      <button type="button" id="menu-btn"
+              class="md:hidden p-2 rounded-lg hover:bg-slate-100 focus-visible:outline focus-visible:outline-2"
+              aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu (WHAT IT IS). 
+         Drawer for phone links (WHAT IT DOES). 
+         Starts as hidden (WHAT IT MEANS). -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 flex flex-col gap-4 font-medium">
+      <a href="#features" class="block hover:text-blue-600">Features</a>
+      <a href="#about" class="block hover:text-blue-600">About</a>
+      <a href="#contact" class="block hover:text-blue-600">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (WHAT IT IS). 
+         Intro (WHAT IT DOES). 
+         First thing you see (WHAT IT MEANS). -->
+    <section class="px-6 py-16 text-center md:py-24">
+      <h1 class="text-3xl font-bold text-slate-900 md:text-5xl">
+        Build it once. Reuse it everywhere.
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-slate-600">
+        A reusable component set built with Tailwind CSS.
+      </p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#features" 
+           class="rounded-full bg-blue-800 px-6 py-3 text-white hover:bg-blue-900 
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                  motion-reduce:transition-none">
+          Get Started
+        </a>
+        <a href="#contact" 
+           class="rounded-full border border-slate-300 px-6 py-3 text-slate-700 hover:bg-slate-50 
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                  motion-reduce:transition-none">
+          Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- Feature Grid (WHAT IT IS). 
+         Cards for services (WHAT IT DOES). 
+         Responsive columns 1, 2, and 3 (WHAT IT MEANS). -->
+    <section id="features" class="px-6 py-12 max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-8">Core Features</h2>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 (WHAT IT IS). 
+             Service card (WHAT IT DOES). 
+             Shows one detail (WHAT IT MEANS). -->
+        <article class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Fast Performance</h3>
+          <p class="mt-2 text-slate-600">Optimized code for fast loading speeds.</p>
+          <a href="#" class="inline-block mt-4 text-blue-800 font-medium hover:underline focus-visible:outline focus-visible:outline-2">Read more &rarr;</a>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Responsive Design</h3>
+          <p class="mt-2 text-slate-600">Works on phones, tablets, and desktops.</p>
+          <a href="#" class="inline-block mt-4 text-blue-800 font-medium hover:underline focus-visible:outline focus-visible:outline-2">Read more &rarr;</a>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Accessible UI</h3>
+          <p class="mt-2 text-slate-600">Built to WCAG standards for all users.</p>
+          <a href="#" class="inline-block mt-4 text-blue-800 font-medium hover:underline focus-visible:outline focus-visible:outline-2">Read more &rarr;</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (WHAT IT IS). 
+       Bottom area (WHAT IT DOES). 
+       Holds copyright and links (WHAT IT MEANS). -->
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-slate-500 text-sm">
+        &copy; 2026 Marcus Hagans. All rights reserved.
+      </div>
+      <div class="flex gap-6 text-sm font-medium text-slate-600">
+        <a href="#" class="hover:text-blue-800 focus-visible:outline focus-visible:outline-2">Privacy</a>
+        <a href="#" class="hover:text-blue-800 focus-visible:outline focus-visible:outline-2">Terms</a>
+        <a href="#" class="hover:text-blue-800 focus-visible:outline focus-visible:outline-2">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Logic (WHAT IT IS). 
+       Toggles the menu (WHAT IT DOES). 
+       Makes it work on phones (WHAT IT MEANS). -->
+  <script>
+    (function() {
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      // setOpen flips the menu visibility (WHAT IT IS).
+      // It toggles the 'hidden' class and ARIA state (WHAT IT DOES).
+      // This tells screen readers the menu is open (WHAT IT MEANS).
+      function toggleMenu() {
+        const isOpen = menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', !isOpen);
+      }
+
+      btn.addEventListener('click', toggleMenu);
+
+      // Close menu on link click (WHAT IT IS).
+      // It hides the menu after a link is picked (WHAT IT DOES).
+      // This makes it easier to use on phones (WHAT IT MEANS).
+      menu.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    })();
+  </script>
+</body>
+</html>
